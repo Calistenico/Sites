@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRICIUMA PIZZARIA em Criciúma | Site Oficial</title>
+    <meta name="description" content="CRICIUMA PIZZARIA em Criciúma oferece serviços de qualidade em criciuma. Entre em contato e solicite seu orçamento gratuito!">
+    <meta name="keywords" content="pizzaria, criciuma, serviços, qualidade, orçamento">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #0f172a; color: white; font-family: 'Segoe UI', sans-serif; }
+        a { text-decoration: none; }
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(15,23,42,0.95); backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding: 16px 32px; display: flex; justify-content: space-between; align-items: center;
+        }
+        .nav-logo { font-size: 18px; font-weight: 800; color: #38bdf8; }
+        .nav-btn { background: #2563eb; color: white; padding: 8px 20px; border-radius: 50px; font-size: 13px; font-weight: 600; }
+        .hero { padding: 140px 24px 80px; text-align: center; }
+        .hero-badge { color: #38bdf8; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; }
+        .hero-title { font-size: clamp(36px, 6vw, 68px); font-weight: 900; margin: 16px 0 24px; line-height: 1.1; }
+        .hero-desc { color: #94a3b8; font-size: 18px; max-width: 600px; margin: 0 auto 40px; line-height: 1.7; }
+        .btn-group { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn-primary { background: white; color: #0f172a; padding: 14px 32px; border-radius: 12px; font-weight: 700; font-size: 15px; }
+        .btn-whatsapp { background: #25d366; color: white; padding: 14px 32px; border-radius: 12px; font-weight: 700; font-size: 15px; }
+        .services { padding: 80px 24px; background: rgba(255,255,255,0.02); }
+        .services-title { text-align: center; font-size: 32px; font-weight: 800; margin-bottom: 48px; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 1100px; margin: 0 auto; }
+        .contact { padding: 80px 24px; text-align: center; }
+        .contact-title { font-size: 32px; font-weight: 800; margin-bottom: 16px; }
+        .contact-desc { color: #94a3b8; margin-bottom: 32px; font-size: 16px; }
+        .btn-zap-big { background: #25d366; color: white; padding: 18px 48px; border-radius: 16px; font-weight: 700; font-size: 20px; display: inline-block; }
+        footer { padding: 40px 24px; text-align: center; border-top: 1px solid rgba(255,255,255,0.08); }
+        footer p { color: #475569; font-size: 13px; margin-bottom: 4px; }
+        .fab-zap {
+            position: fixed; bottom: 24px; right: 24px;
+            background: #25d366; color: white;
+            width: 60px; height: 60px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 28px; box-shadow: 0 8px 32px rgba(37,211,102,0.4);
+            z-index: 999; transition: transform 0.2s;
+        }
+        .fab-zap:hover { transform: scale(1.1); }
+    </style>
+</head>
+<body>
+
+<nav class="nav">
+    <div class="nav-logo">CRICIUMA PIZZARIA em Criciúma</div>
+    <a href="https://wa.me/?text=Ol%C3%A1%2C+vim+pelo+site!" class="nav-btn">
+        <i class="fab fa-whatsapp"></i> Falar Agora
+    </a>
+</nav>
+
+<section class="hero">
+    <div class="hero-badge">Pizzaria</div>
+    <h1 class="hero-title">O Melhor Pizzaria da Região</h1>
+    <p class="hero-desc">CRICIUMA PIZZARIA em Criciúma oferece serviços de qualidade em criciuma. Entre em contato e solicite seu orçamento gratuito!</p>
+    <div class="btn-group">
+        <a href="#servicos" class="btn-primary">Ver Serviços</a>
+        <a href="https://wa.me/?text=Ol%C3%A1%2C+quero+um+or%C3%A7amento!" class="btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> Orçamento Grátis
+        </a>
+    </div>
+</section>
+
+<section id="servicos" class="services">
+    <h2 class="services-title">Nossos Serviços</h2>
+    <div class="services-grid">
+        
+        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:24px;padding:32px;transition:border-color 0.3s">
+            <div style="width:48px;height:48px;background:rgba(56,189,248,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:20px">
+                <i class="fas fa-star" style="color:#38bdf8"></i>
+            </div>
+            <h4 style="font-size:18px;font-weight:700;margin-bottom:12px">Atendimento Especializado</h4>
+            <p style="color:#94a3b8;font-size:14px;line-height:1.6">Profissionais qualificados à sua disposição</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:24px;padding:32px;transition:border-color 0.3s">
+            <div style="width:48px;height:48px;background:rgba(56,189,248,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:20px">
+                <i class="fas fa-bolt" style="color:#38bdf8"></i>
+            </div>
+            <h4 style="font-size:18px;font-weight:700;margin-bottom:12px">Qualidade Garantida</h4>
+            <p style="color:#94a3b8;font-size:14px;line-height:1.6">Serviços com excelência e responsabilidade</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:24px;padding:32px;transition:border-color 0.3s">
+            <div style="width:48px;height:48px;background:rgba(56,189,248,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:20px">
+                <i class="fas fa-shield-alt" style="color:#38bdf8"></i>
+            </div>
+            <h4 style="font-size:18px;font-weight:700;margin-bottom:12px">Orçamento Gratuito</h4>
+            <p style="color:#94a3b8;font-size:14px;line-height:1.6">Solicite agora sem compromisso</p>
+        </div>
+    </div>
+</section>
+
+<section class="contact">
+    <h2 class="contact-title">Fale Conosco</h2>
+    <p class="contact-desc">Atendimento rápido pelo WhatsApp!</p>
+    <a href="https://wa.me/?text=Ol%C3%A1!" class="btn-zap-big">
+        <i class="fab fa-whatsapp"></i> Chamar no WhatsApp
+    </a>
+</section>
+
+<footer>
+    <p>© 2026 CRICIUMA PIZZARIA em Criciúma. Todos os direitos reservados.</p>
+    <p>Informações sobre CRICIUMA PIZZARIA em Criciúma » Empresa de Pizzaria perto de Você! Endereço, whatsapp, telefone, mapa,</p>
+</footer>
+
+<a href="https://wa.me/?text=Ol%C3%A1!" class="fab-zap">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+</body>
+</html>
