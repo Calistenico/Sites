@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WhatsApp de Pizzaria em Alvorada | Pizzaria</title>
+<meta name="description" content="WhatsApp de Pizzaria em Alvorada oferece os melhores serviços de pizzaria em alvorada. Qualidade, confiança e atendimento personalizado.">
+<meta name="keywords" content="pizzaria, alvorada, serviços, qualidade">
+<meta property="og:title" content="WhatsApp de Pizzaria em Alvorada">
+<meta property="og:description" content="WhatsApp de Pizzaria em Alvorada oferece os melhores serviços de pizzaria em alvorada. Qualidade, confiança e atendimento personalizado.">
+<meta property="og:image" content="https://source.unsplash.com/featured/1400x700/?pizza%20restaurant%20italian%20food&sig=alpha">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+<style>
+:root {
+  --c1:#c0392b; --c2:#e74c3c; --c3:#ff6b35;
+  --bg:#1a0a05; --bgcard:#2d1008;
+  --text:#f1f5f9; --muted:#94a3b8; --border:rgba(255,255,255,0.08);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+
+/* NAV */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:0 5%;
+  background:rgba(0,0,0,0.0);
+  backdrop-filter:blur(0px);
+  border-bottom:1px solid transparent;
+  transition:all 0.4s ease;
+  display:flex;align-items:center;justify-content:space-between;height:72px;
+}
+.nav.scrolled{
+  background:rgba(0,0,0,0.92);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+.nav-logo{
+  font-family:'Syne',sans-serif;font-size:20px;font-weight:900;
+  color:var(--c3);letter-spacing:-0.5px;
+  display:flex;align-items:center;gap:8px;
+}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{color:var(--muted);font-size:13px;font-weight:500;transition:color 0.2s}
+.nav-links a:hover{color:var(--c3)}
+.nav-cta{
+  background:var(--c1);color:#fff!important;
+  padding:9px 20px;border-radius:50px;
+  font-size:13px;font-weight:700;
+  transition:all 0.2s;
+  display:flex;align-items:center;gap:6px;
+}
+.nav-cta:hover{background:var(--c2);transform:translateY(-1px)}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  position:relative;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:url('https://source.unsplash.com/featured/1400x700/?pizza%20restaurant%20italian%20food&sig=alpha') center/cover no-repeat;
+}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.8) 100%);
+}
+.hero-glow{
+  position:absolute;top:30%;left:50%;transform:translate(-50%,-50%);
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle, #c0392b33 0%, transparent 70%);
+  pointer-events:none;
+}
+.hero-content{position:relative;z-index:1;max-width:860px;padding:0 24px}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.15);
+  backdrop-filter:blur(8px);
+  padding:6px 16px;border-radius:50px;
+  font-size:12px;font-weight:700;
+  text-transform:uppercase;letter-spacing:2px;
+  color:var(--c3);margin-bottom:24px;
+}
+.hero-title{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(42px,7vw,82px);
+  font-weight:900;line-height:1.0;
+  margin-bottom:24px;
+  text-shadow:0 2px 30px rgba(0,0,0,0.5);
+}
+.hero-title span{color:var(--c3)}
+.hero-desc{
+  font-size:clamp(16px,2vw,20px);
+  color:rgba(255,255,255,0.75);
+  line-height:1.7;max-width:620px;margin:0 auto 40px;
+}
+.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn-primary{
+  background:var(--c1);color:#fff;
+  padding:16px 36px;border-radius:12px;
+  font-weight:700;font-size:16px;
+  display:flex;align-items:center;gap:10px;
+  transition:all 0.25s;
+  box-shadow:0 8px 32px #c0392b55;
+}
+.btn-primary:hover{background:var(--c2);transform:translateY(-2px);box-shadow:0 12px 40px #c0392b77}
+.btn-ghost{
+  background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.2);
+  color:#fff;
+  padding:16px 36px;border-radius:12px;
+  font-weight:600;font-size:15px;
+  backdrop-filter:blur(8px);
+  transition:all 0.25s;
+}
+.btn-ghost:hover{background:rgba(255,255,255,0.18);transform:translateY(-2px)}
+.hero-scroll{
+  position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  color:var(--muted);font-size:11px;
+  animation:bounce 2s infinite;
+}
+.hero-scroll i{font-size:20px;color:var(--c3)}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+
+/* STATS BAR */
+.stats-bar{
+  background:#2d1008;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:28px 5%;
+  display:flex;justify-content:center;align-items:center;gap:0;flex-wrap:wrap;
+}
+.stat-item{
+  flex:1;min-width:140px;max-width:200px;
+  text-align:center;padding:16px;
+  position:relative;
+}
+.stat-item+.stat-item::before{
+  content:'';position:absolute;left:0;top:20%;bottom:20%;
+  width:1px;background:var(--border);
+}
+.stat-num{font-family:'Syne',sans-serif;font-size:36px;font-weight:900;color:var(--c3)}
+.stat-label{font-size:12px;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:1px}
+
+/* SEÇÕES */
+.section{padding:100px 5%}
+.section-alt{background:#2d1008;padding:100px 5%}
+.sec-label{
+  font-size:11px;font-weight:700;text-transform:uppercase;
+  letter-spacing:3px;color:var(--c3);margin-bottom:12px;
+}
+.sec-title{
+  font-family:'Syne',sans-serif;font-size:clamp(28px,4vw,48px);
+  font-weight:900;line-height:1.1;margin-bottom:16px;
+}
+.sec-desc{color:var(--muted);font-size:16px;line-height:1.7;max-width:560px}
+.sec-head{max-width:1200px;margin:0 auto 60px;}
+.sec-head-center{text-align:center}
+.sec-head-center .sec-desc{margin:0 auto}
+
+/* SERVIÇOS */
+.servicos-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:28px;max-width:1200px;margin:0 auto;
+}
+.card-servico{
+  background:var(--bgcard);
+  border:1px solid var(--border);
+  border-radius:20px;overflow:hidden;
+  transition:all 0.35s;
+  display:flex;flex-direction:column;
+}
+.card-servico:hover{
+  transform:translateY(-8px);
+  border-color:#c0392b66;
+  box-shadow:0 20px 60px #c0392b22;
+}
+.card-img-wrap{
+  position:relative;height:200px;overflow:hidden;
+}
+.card-img-wrap img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform 0.5s;
+}
+.card-servico:hover .card-img-wrap img{transform:scale(1.08)}
+.card-icon-overlay{
+  position:absolute;bottom:16px;right:16px;
+  width:44px;height:44px;border-radius:12px;
+  background:var(--c1);
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;color:#fff;
+  box-shadow:0 4px 16px #c0392b66;
+}
+.card-body{padding:24px;flex:1;display:flex;flex-direction:column;gap:10px}
+.card-body h3{font-family:'Syne',sans-serif;font-size:20px;font-weight:800}
+.card-body p{color:var(--muted);font-size:14px;line-height:1.6;flex:1}
+.card-cta{
+  display:inline-flex;align-items:center;gap:6px;
+  color:var(--c3);font-weight:600;font-size:13px;margin-top:8px;
+  transition:gap 0.2s;
+}
+.card-cta:hover{gap:10px}
+
+/* SOBRE */
+.sobre-wrap{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:60px;align-items:center;max-width:1200px;margin:0 auto;
+}
+.sobre-img-wrap{
+  position:relative;border-radius:24px;overflow:hidden;
+}
+.sobre-img-wrap img{width:100%;height:480px;object-fit:cover}
+.sobre-img-badge{
+  position:absolute;bottom:24px;left:24px;
+  background:var(--c1);color:#fff;
+  padding:12px 20px;border-radius:14px;
+  font-family:'Syne',sans-serif;font-size:13px;font-weight:700;
+  box-shadow:0 8px 24px #c0392b66;
+}
+.sobre-content{display:flex;flex-direction:column;gap:24px}
+.sobre-content p{color:var(--muted);font-size:16px;line-height:1.8}
+
+/* DIFERENCIAIS */
+.dif-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:24px;max-width:1200px;margin:0 auto;
+}
+.dif-item{
+  background:var(--bgcard);border:1px solid var(--border);
+  border-radius:20px;padding:32px 24px;text-align:center;
+  transition:all 0.3s;
+}
+.dif-item:hover{
+  border-color:#c0392b66;
+  transform:translateY(-4px);
+  box-shadow:0 12px 40px #c0392b1a;
+}
+.dif-icon{
+  width:60px;height:60px;border-radius:16px;
+  background:linear-gradient(135deg,#c0392b,#e74c3c);
+  display:flex;align-items:center;justify-content:center;
+  font-size:24px;color:#fff;margin:0 auto 16px;
+  box-shadow:0 6px 20px #c0392b55;
+}
+.dif-item h4{font-family:'Syne',sans-serif;font-size:16px;font-weight:800;margin-bottom:8px}
+.dif-item p{color:var(--muted);font-size:13px;line-height:1.6}
+
+/* DEPOIMENTOS */
+.dep-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:24px;max-width:1200px;margin:0 auto;
+}
+.dep-card{
+  background:var(--bgcard);border:1px solid var(--border);
+  border-radius:20px;padding:28px;
+  transition:all 0.3s;
+}
+.dep-card:hover{border-color:#c0392b44;transform:translateY(-4px)}
+.dep-stars{font-size:18px;margin-bottom:12px}
+.dep-texto{
+  color:var(--muted);font-size:15px;line-height:1.7;
+  font-style:italic;margin-bottom:16px;
+}
+.dep-autor{display:flex;align-items:center;gap:10px}
+.dep-avatar{font-size:28px}
+.dep-autor strong{font-size:14px;font-weight:600}
+
+/* CTA FINAL */
+.cta-section{
+  padding:100px 5%;text-align:center;
+  background:linear-gradient(135deg, #c0392b22 0%, transparent 50%, #e74c3c22 100%);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  position:relative;overflow:hidden;
+}
+.cta-section::before{
+  content:'';position:absolute;inset:0;
+  background:url('https://source.unsplash.com/featured/1400x700/?pizza%20restaurant%20italian%20food&sig=alpha') center/cover;
+  opacity:0.06;
+}
+.cta-content{position:relative;z-index:1;max-width:700px;margin:0 auto}
+.cta-content h2{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(32px,5vw,60px);font-weight:900;
+  line-height:1.1;margin-bottom:20px;
+}
+.cta-content p{color:rgba(255,255,255,0.7);font-size:18px;margin-bottom:40px}
+.btn-zap-final{
+  display:inline-flex;align-items:center;gap:12px;
+  background:#25d366;color:#fff;
+  padding:18px 48px;border-radius:16px;
+  font-weight:700;font-size:20px;
+  box-shadow:0 8px 40px rgba(37,211,102,0.4);
+  transition:all 0.25s;
+}
+.btn-zap-final:hover{background:#128c7e;transform:translateY(-3px);box-shadow:0 16px 50px rgba(37,211,102,0.5)}
+
+/* FOOTER */
+footer{
+  background:#2d1008;
+  border-top:1px solid var(--border);
+  padding:48px 5% 32px;
+}
+.footer-grid{
+  display:grid;grid-template-columns:2fr 1fr 1fr;
+  gap:40px;max-width:1200px;margin:0 auto 40px;
+}
+.footer-brand h3{font-family:'Syne',sans-serif;font-size:22px;font-weight:900;color:var(--c3);margin-bottom:12px}
+.footer-brand p{color:var(--muted);font-size:14px;line-height:1.7;max-width:320px}
+.footer-col h4{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;color:var(--c3)}
+.footer-col a{display:block;color:var(--muted);font-size:14px;margin-bottom:10px;transition:color 0.2s}
+.footer-col a:hover{color:var(--c3)}
+.footer-bottom{
+  border-top:1px solid var(--border);padding-top:24px;
+  display:flex;justify-content:space-between;align-items:center;
+  max-width:1200px;margin:0 auto;flex-wrap:wrap;gap:12px;
+}
+.footer-bottom p{color:var(--muted);font-size:13px}
+
+/* FAB WHATSAPP */
+.fab{
+  position:fixed;bottom:28px;right:28px;z-index:999;
+  background:#25d366;color:#fff;
+  width:64px;height:64px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:30px;
+  box-shadow:0 8px 32px rgba(37,211,102,0.5);
+  transition:all 0.25s;
+  animation:fab-pulse 3s infinite;
+}
+.fab:hover{transform:scale(1.12);box-shadow:0 12px 48px rgba(37,211,102,0.7)}
+@keyframes fab-pulse{
+  0%,100%{box-shadow:0 8px 32px rgba(37,211,102,0.5)}
+  50%{box-shadow:0 8px 48px rgba(37,211,102,0.8),0 0 0 12px rgba(37,211,102,0.1)}
+}
+
+/* ANIMATIONS */
+[data-aos]{opacity:0;transition-property:opacity,transform}
+[data-aos].aos-animate{opacity:1}
+[data-aos="fade-up"]{transform:translateY(30px)}
+[data-aos="fade-up"].aos-animate{transform:translateY(0)}
+[data-aos="fade-right"]{transform:translateX(-30px)}
+[data-aos="fade-right"].aos-animate{transform:translateX(0)}
+[data-aos="fade-left"]{transform:translateX(30px)}
+[data-aos="fade-left"].aos-animate{transform:translateX(0)}
+[data-aos="zoom-in"]{transform:scale(0.9)}
+[data-aos="zoom-in"].aos-animate{transform:scale(1)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .sobre-wrap{grid-template-columns:1fr}
+  .sobre-img-wrap img{height:300px}
+  .footer-grid{grid-template-columns:1fr}
+  .stats-bar{gap:0}
+  .stat-item+.stat-item::before{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-logo">🍕 WhatsApp de Pizzaria em Alvorada</div>
+  <div class="nav-links">
+    <a href="#servicos">Serviços</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#depoimentos">Depoimentos</a>
+    <a href="https://wa.me/?text=Ol%C3%A1!" class="nav-cta">
+      <i class="fab fa-whatsapp"></i> Falar Agora
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-badge">🍕 Pizzaria</div>
+    <h1 class="hero-title" id="hero-title">O Melhor Pizzaria de alvorada</h1>
+    <p class="hero-desc">WhatsApp de Pizzaria em Alvorada oferece os melhores serviços de pizzaria em alvorada. Qualidade, confiança e atendimento personalizado.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/?text=Ol%C3%A1!+Quero+um+or%C3%A7amento!" class="btn-primary">
+        <i class="fab fa-whatsapp"></i> Orçamento Grátis
+      </a>
+      <a href="#servicos" class="btn-ghost">Ver Serviços</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Explorar</span>
+    <i class="fas fa-chevron-down"></i>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-num">100%</div>
+    <div class="stat-label">Satisfação</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">5★</div>
+    <div class="stat-label">Avaliação</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">24h</div>
+    <div class="stat-label">Atendimento</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">🍕</div>
+    <div class="stat-label">Pizzaria</div>
+  </div>
+</div>
+
+<!-- SERVIÇOS -->
+<section class="section" id="servicos">
+  <div class="sec-head sec-head-center" data-aos="fade-up">
+    <div class="sec-label">O que oferecemos</div>
+    <h2 class="sec-title">Nossos Serviços</h2>
+    <p class="sec-desc">Qualidade e dedicação em cada detalhe para você.</p>
+  </div>
+  <div class="servicos-grid">
+    
+        <div class="card-servico" data-aos="fade-right">
+            <div class="card-img-wrap">
+                <img src="https://source.unsplash.com/400x300/?pizza%20restaurant%20italian%20food%20Servi%C3%A7o%20de%20pizzaria&sig=30" alt="Serviço de pizzaria" loading="lazy" onerror="this.style.display='none'">
+                <div class="card-icon-overlay">
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            <div class="card-body">
+                <h3>Serviço de pizzaria</h3>
+                <p>Atendimento especializado com qualidade garantida</p>
+                <a href="https://wa.me/?text=Ol%C3%A1!+Quero+saber+mais+sobre+Servi%C3%A7o%20de%20pizzaria" class="card-cta">
+                    Saiba mais <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+        <div class="card-servico" data-aos="fade-left">
+            <div class="card-img-wrap">
+                <img src="https://source.unsplash.com/400x300/?pizza%20restaurant%20italian%20food%20Consultoria%20Gratuita&sig=40" alt="Consultoria Gratuita" loading="lazy" onerror="this.style.display='none'">
+                <div class="card-icon-overlay">
+                    <i class="fas fa-bolt"></i>
+                </div>
+            </div>
+            <div class="card-body">
+                <h3>Consultoria Gratuita</h3>
+                <p>Avaliação sem compromisso para entender sua necessidade</p>
+                <a href="https://wa.me/?text=Ol%C3%A1!+Quero+saber+mais+sobre+Consultoria%20Gratuita" class="card-cta">
+                    Saiba mais <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+        <div class="card-servico" data-aos="fade-right">
+            <div class="card-img-wrap">
+                <img src="https://source.unsplash.com/400x300/?pizza%20restaurant%20italian%20food%20Atendimento%20VIP&sig=50" alt="Atendimento VIP" loading="lazy" onerror="this.style.display='none'">
+                <div class="card-icon-overlay">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+            </div>
+            <div class="card-body">
+                <h3>Atendimento VIP</h3>
+                <p>Serviço personalizado pensado para você</p>
+                <a href="https://wa.me/?text=Ol%C3%A1!+Quero+saber+mais+sobre+Atendimento%20VIP" class="card-cta">
+                    Saiba mais <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+        <div class="card-servico" data-aos="fade-left">
+            <div class="card-img-wrap">
+                <img src="https://source.unsplash.com/400x300/?pizza%20restaurant%20italian%20food%20Garantia%20Total&sig=60" alt="Garantia Total" loading="lazy" onerror="this.style.display='none'">
+                <div class="card-icon-overlay">
+                    <i class="fas fa-gem"></i>
+                </div>
+            </div>
+            <div class="card-body">
+                <h3>Garantia Total</h3>
+                <p>Seu investimento protegido com nossa garantia</p>
+                <a href="https://wa.me/?text=Ol%C3%A1!+Quero+saber+mais+sobre+Garantia%20Total" class="card-cta">
+                    Saiba mais <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section class="section-alt" id="diferenciais">
+  <div class="sec-head sec-head-center" data-aos="fade-up">
+    <div class="sec-label">Por que nos escolher</div>
+    <h2 class="sec-title">Nossos Diferenciais</h2>
+  </div>
+  <div class="dif-grid">
+    
+        <div class="dif-item" data-aos="zoom-in" data-aos-delay="0">
+            <div class="dif-icon"><i class="fas fa-trophy"></i></div>
+            <h4>Experiência</h4>
+            <p>Anos de experiência no mercado</p>
+        </div>
+        <div class="dif-item" data-aos="zoom-in" data-aos-delay="100">
+            <div class="dif-icon"><i class="fas fa-clock"></i></div>
+            <h4>Qualidade</h4>
+            <p>Produtos e serviços de alta qualidade</p>
+        </div>
+        <div class="dif-item" data-aos="zoom-in" data-aos-delay="200">
+            <div class="dif-icon"><i class="fas fa-thumbs-up"></i></div>
+            <h4>Preço Justo</h4>
+            <p>Melhor custo-benefício da região</p>
+        </div>
+        <div class="dif-item" data-aos="zoom-in" data-aos-delay="300">
+            <div class="dif-icon"><i class="fas fa-heart"></i></div>
+            <h4>Atendimento Rápido</h4>
+            <p>Respondemos em minutos pelo WhatsApp</p>
+        </div>
+        <div class="dif-item" data-aos="zoom-in" data-aos-delay="400">
+            <div class="dif-icon"><i class="fas fa-certificate"></i></div>
+            <h4>Equipe Qualificada</h4>
+            <p>Profissionais treinados e certificados</p>
+        </div>
+        <div class="dif-item" data-aos="zoom-in" data-aos-delay="500">
+            <div class="dif-icon"><i class="fas fa-users"></i></div>
+            <h4>Satisfação Garantida</h4>
+            <p>Seu contentamento é nossa prioridade</p>
+        </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="section" id="sobre">
+  <div class="sobre-wrap">
+    <div class="sobre-img-wrap" data-aos="fade-right">
+      <img src="https://source.unsplash.com/featured/800x600/?pizza%20restaurant%20italian%20food&sig=beta" alt="WhatsApp de Pizzaria em Alvorada" loading="lazy">
+      <div class="sobre-img-badge">🍕 Pizzaria de Confiança</div>
+    </div>
+    <div class="sobre-content" data-aos="fade-left">
+      <div class="sec-label">Sobre nós</div>
+      <h2 class="sec-title">WhatsApp de Pizzaria em Alvorada</h2>
+      <p>WhatsApp de Pizzaria em Alvorada é referência em pizzaria na região de alvorada. Nossa equipe é especializada e comprometida com a satisfação total dos clientes.</p>
+      <p style="color:var(--muted);font-size:14px">La Pizza. Rua Herminio Machado, 439, Apt 002, Jardim Algarve, Alvorada / RS ; Rota Da Pizza. Rua And</p>
+      <a href="https://wa.me/?text=Ol%C3%A1!+Quero+saber+mais!" class="btn-primary" style="align-self:flex-start;margin-top:12px">
+        <i class="fab fa-whatsapp"></i> Entrar em Contato
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="section-alt" id="depoimentos">
+  <div class="sec-head sec-head-center" data-aos="fade-up">
+    <div class="sec-label">Clientes satisfeitos</div>
+    <h2 class="sec-title">O que falam de nós</h2>
+  </div>
+  <div class="dep-grid">
+    
+    <div class="dep-card" data-aos="fade-up">
+      <div class="dep-stars">⭐⭐⭐⭐⭐</div>
+      <p class="dep-texto">"Serviço excelente, super recomendo! Equipe muito profissional e atenciosa."</p>
+      <div class="dep-autor"><span class="dep-avatar">👩</span><strong>Maria S.</strong></div>
+    </div>
+    <div class="dep-card" data-aos="fade-up" data-aos-delay="150">
+      <div class="dep-stars">⭐⭐⭐⭐⭐</div>
+      <p class="dep-texto">"Melhor atendimento da cidade! Voltarei sempre com certeza."</p>
+      <div class="dep-autor"><span class="dep-avatar">👨</span><strong>João P.</strong></div>
+    </div>
+    <div class="dep-card" data-aos="fade-up" data-aos-delay="300">
+      <div class="dep-stars">⭐⭐⭐⭐⭐</div>
+      <p class="dep-texto">"Qualidade incrível e preço justo. Fiquei muito satisfeito!"</p>
+      <div class="dep-autor"><span class="dep-avatar">👩‍💼</span><strong>Ana R.</strong></div>
+    </div>
+    
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-section">
+  <div class="cta-content" data-aos="zoom-in">
+    <h2>Pronto para começar?</h2>
+    <p>Entre em contato agora e receba atendimento imediato pelo WhatsApp!</p>
+    <a href="https://wa.me/?text=Ol%C3%A1!+Vim+pelo+site+e+quero+um+or%C3%A7amento!" class="btn-zap-final">
+      <i class="fab fa-whatsapp"></i> Chamar no WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h3>🍕 WhatsApp de Pizzaria em Alvorada</h3>
+      <p>WhatsApp de Pizzaria em Alvorada oferece os melhores serviços de pizzaria em alvorada. Qualidade, confiança e atendimento personalizado.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navegação</h4>
+      <a href="#servicos">Serviços</a>
+      <a href="#sobre">Sobre nós</a>
+      <a href="#depoimentos">Depoimentos</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/"><i class="fab fa-whatsapp"></i> Chamar no WhatsApp</a>
+      <a href="#sobre"><i class="fas fa-map-marker-alt"></i> La Pizza. Rua Herminio Machado, 439, Apt 002, Jard</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 WhatsApp de Pizzaria em Alvorada. Todos os direitos reservados.</p>
+    <p style="color:#374151;font-size:11px">Site criado por Vyntrix</p>
+  </div>
+</footer>
+
+<!-- FAB WHATSAPP -->
+<a href="https://wa.me/?text=Ol%C3%A1!" class="fab" title="Falar no WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({duration:700,once:true,offset:80});
+
+// Nav scroll
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('scrolled',window.scrollY>60);
+});
+
+// Título animado letra por letra
+const titleEl=document.getElementById('hero-title');
+const titleText=titleEl.textContent;
+titleEl.innerHTML='';
+let i=0;
+function typeTitle(){
+  if(i<titleText.length){
+    titleEl.innerHTML+=titleText[i]==' '?'&nbsp;':titleText[i];
+    i++;setTimeout(typeTitle,i<10?0:30);
+  }
+}
+setTimeout(typeTitle,600);
+
+// Contador animado
+function animateCount(el,target,suffix=''){
+  let curr=0;const step=Math.ceil(target/40);
+  const t=setInterval(()=>{
+    curr=Math.min(curr+step,target);
+    el.textContent=curr+suffix;
+    if(curr>=target)clearInterval(t);
+  },40);
+}
+
+// Observer para stats
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.style.opacity='1';
+      e.target.style.transform='none';
+    }
+  });
+},{threshold:0.1});
+document.querySelectorAll('[data-aos]').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
